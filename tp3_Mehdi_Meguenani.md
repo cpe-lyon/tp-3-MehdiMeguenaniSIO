@@ -297,6 +297,7 @@ umask 022
 Il faut que les droit soit ``` rw. r.. r.e ``` pour les dossiers  et ``` rw. r.. r.. ``` pour les fichiers 
 
 ![ScreenShot](./assetp3/Q28.PNG)
+
 12. Définissez un umask équilibré qui vous autorise un accès complet et autorise un accès en lecture aux membres de votre groupe. Testez sur un nouveau fichier et un nouveau répertoire.
 
 Afin d'avoir un umask équilibré qui vous autorise un accès complet et autorise un accès en lecture aux membres de mon groupe. Il faut faire la commande suivante 

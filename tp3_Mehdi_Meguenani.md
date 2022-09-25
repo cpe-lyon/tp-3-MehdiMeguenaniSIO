@@ -277,8 +277,45 @@ Pour qu'un autre personne de mon groupe puisse accèder au fichier "fichier" en 
 
 ![ScreenShot](./assetp3/Q26.PNG)
 
-10. Définissez un umask très restrictif qui interdit à quiconque à part vous l’accès en lecture ou en écriture,
-ainsi que la traversée de vos répertoires. Testez sur un nouveau fichier et un nouveau répertoire.
+10. Définissez un umask très restrictif qui interdit à quiconque à part vous l’accès en lecture ou en écriture, ainsi que la traversée de vos répertoires. Testez sur un nouveau fichier et un nouveau répertoire.
 
+Afin de définir un  umask très restrictif qui interdit à quiconque à part a nous l’accès en lecture ou en écriture, ainsi que la traversée de nos répertoires. il faut effectuer la commande suivante. 
+```
+umask 077
+
+```
+![ScreenShot](./assetp3/Q27.PNG)
+
+
+11. Définissez un umask très permissif qui autorise tout le monde à lire vos fichiers et traverser vos répertoires, mais n’autorise que vous à écrire. Testez sur un nouveau fichier et un nouveau répertoire.
+
+Afin d'avoir un  umask très permissif qui autorise tout le monde à lire mes fichiers et traverser mes répertoires, mais n’autorise que moi à écrire. Il faut faire la commande : 
+```
+umask 022
+```
+Il faut que les droit soit ``` rw. r.. r.e ``` pour les dossiers  et ``` rw. r.. r.. ``` pour les fichiers 
+
+![ScreenShot](./assetp3/Q28.PNG)
+
+12. Définissez un umask équilibré qui vous autorise un accès complet et autorise un accès en lecture aux membres de votre groupe. Testez sur un nouveau fichier et un nouveau répertoire.
+
+Afin d'avoir un umask équilibré qui vous autorise un accès complet et autorise un accès en lecture aux membres de mon groupe. Il faut faire la commande suivante 
+```
+umask 037
+
+```
+
+![ScreenShot](./assetp3/Q29.PNG)
+
+13. Transcrivez les commandes suivantes de la notation classique à la notation octale ou vice-versa (vous
+pourrez vous aider de la commande stat pour valider vos réponses) :
+
+Pour chmod u=rx,g=wx,o=r fic correspond a  ``` chmod 534 fic ``` en version octale
+
+Pour chmod uo+w,g-rx fic en sachant que les droits initiaux de fic sont r--r-x--- correspond ```chmod 600 fic``` en version octale
+
+Pour chmod 653 fic en sachant que les droits initiaux de fic sont 711 correspond ``` rw-r-x-wx ``` en version classique 
+
+Pourchmod u+x,g=w,o-r fic en sachant que les droits initiaux de fic sont r--r-x--- correspond ``` chmod 520 fic ``` en version octale
 
 

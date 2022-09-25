@@ -274,7 +274,8 @@ En suprimmant le droit d'execution sur le dossier on ne peut n'y accèder au dos
 
 Pour qu'un autre personne de mon groupe puisse accèder au fichier "fichier" en lecture mais pas en écriture il faut effectuer la commande : 
 ```bash
-
+chmod 
+```
 ![ScreenShot](./assetp3/Q26.PNG)
 
 10. Définissez un umask très restrictif qui interdit à quiconque à part vous l’accès en lecture ou en écriture, ainsi que la traversée de vos répertoires. Testez sur un nouveau fichier et un nouveau répertoire.

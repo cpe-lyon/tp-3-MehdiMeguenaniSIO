@@ -221,3 +221,64 @@ Quelle commande permet de forcer sudo à oublier votre mot de passe ?
 La coommande sudo conserve en memoire notre mot de passe pendant 15 minutes
 
 La commande ``` sudo -k ``` permet de forcer sudo a oublié le mot de passe 
+
+# Exercice 2. Gestion des permissions
+
+1. Dans votre $HOME, créez un dossier test, et dans ce dossier un fichier fichier contenant quelques lignes de texte. Quels sont les droits sur test et fichier ?
+
+Les droit sur le dossier test sont :
+
+![ScreenShot](./assetp3/Q201.PNG)
+
+Les droits sur le fichiier "fichier" sont : 
+
+![ScreenShot](./assetp3/Q20.PNG)
+
+2. Retirez tous les droits sur ce fichier (même pour vous), puis essayez de le modifier et de l’afficher en tant que root. Conclusion ?
+
+L'utilisateur peut toujours lire le fichier même en ayant enlever tous les droits. Donc en conclusion le compte aura toujours les droit sur les fichiers 
+![ScreenShot](./assetp3/Q21.PNG)
+
+3. Redonnez vous les droits en écriture et exécution sur fichier puis exécutez la commande echo "echo Hello" > fichier. On a vu lors des TP précédents que cette commande remplace le contenu d’un fichier s’il existe déjà. Que peut-on dire au sujet des droits ?
+
+En redonnant le droit en éxectution et en écriture on peut utiliser la commande e ``` echo "echo Hello" > fichier ``` et donc modifier le fichier mais on ne peut pas lire le fichier. 
+
+![ScreenShot](./assetp3/Q22.PNG)
+
+4. Essayez d’exécuter le fichier. Est-ce que cela fonctionne ? Et avec sudo ? Expliquez. 
+On ne peut pas éxécuter le fichier mais avec sudo cela marche. Nous n'avons pas le droit de lecture donc on ne peut pas voir le contenu du fichier, le résultat de son éxécution. 
+![ScreenShot](./assetp3/Q23.PNG)
+
+5. Placez-vous dans le répertoire test, et retirez-vous le droit en lecture pour ce répertoire. Listez le contenu du répertoire, puis exécutez ou affichez le contenu du fichier fichier. Qu’en déduisez-vous ? Rétablissez le droit en lecture sur test.
+
+Une fois le droit de lecture sur le dossier test enlever nous n'avons plus aucun accès au fichier on ne peut plus éxécuter le fichier. 
+Enelever le droit de lecture a un dossier empêche toute accès au fichier du dossier.
+
+![ScreenShot](./assetp3/Q24.PNG)
+
+6. Créez dans test un fichier nouveau ainsi qu’un répertoire sstest. Retirez au fichier nouveau et au répertoire test le droit en écriture. Tentez de modifier le fichier nouveau. Rétablissez ensuite le droit en écriture au répertoire test. Tentez de modifier le fichier nouveau, puis de le supprimer. Que pouvez-vous déduire de toutes ces manipulations ?
+
+Quand on retire le droit en écriture au dossier test et au fichier nouveau nous ne pouvons pas modifier. De même lorsqu'on rétablie le droit en écrit. 
+On peut en déduire donc que le droit  d'écriture permet sur le dossier concerne la supression des fichier présent dans le dossier. 
+
+![ScreenShot](./assetp3/Q25.PNG)
+
+7. Positionnez vous dans votre répertoire personnel, puis retirez le droit en exécution du répertoire test. Tentez de créer, supprimer, ou modifier un fichier dans le répertoire test, de vous y déplacer, d’en lister le contenu, etc…Qu’en déduisez vous quant au sens du droit en exécution pour les répertoires ?
+
+En suprimmant le droit d'execution sur le dossier on ne peut n'y accèder au dossier mais on ne peut pas aussi créer, supprimer, ou modifier un fichier 
+
+8. Rétablissez le droit en exécution du répertoire test. Positionnez vous dans ce répertoire et retirez lui à nouveau le droit d’exécution. Essayez de créer, supprimer et modifier un fichier dans le répertoire test, de vous déplacer dans ssrep, de lister son contenu. Qu’en concluez-vous quant à l’influence des droits que l’on possède sur le répertoire courant ? Peut-on retourner dans le répertoire parent avec ”cd ..” ? Pouvez-vous donner une explication ?
+
+
+9. Rétablissez le droit en exécution du répertoire test. Attribuez au fichier fichier les droits suffisants pour qu’une autre personne de votre groupe puisse y accéder en lecture, mais pas en écriture.
+
+Pour qu'un autre personne de mon groupe puisse accèder au fichier "fichier" en lecture mais pas en écriture il faut effectuer la commande : 
+```bash
+
+![ScreenShot](./assetp3/Q26.PNG)
+
+10. Définissez un umask très restrictif qui interdit à quiconque à part vous l’accès en lecture ou en écriture,
+ainsi que la traversée de vos répertoires. Testez sur un nouveau fichier et un nouveau répertoire.
+
+
+

@@ -164,7 +164,6 @@ grep dev /etc/group
 ```
 ![ScreenShot](./assetp3/Q13.PNG)
 
-grep 1002 /etc/group
 
 14. Quel groupe a pour gid 1002 ?
 
@@ -182,3 +181,26 @@ gpasswd -d charlie infra
 ``` 
 Après cela Charlie a toujours accès au différent groupe primaire et prioritaire état infra
 
+16. Modifiez le compte de dave de sorte que :
+
+
+ Pour que le compte expire au 1er juin 2021 : 
+ ```bash
+   chage -expiredate 2021-06-01 dave
+ ``` 
+ il faut changer de mot de passe avant 90 jours :
+ ```bash
+   chage -M 90 dave
+ ``` 
+ il faut attendre 5 jours pour modifier un mot de passe :
+```bash
+   chage -m 5 dave
+``` 
+ l’utilisateur est averti 14 jours avant l’expiration de son mot de passe :
+```bash
+  chage -W 14 dave
+``` 
+ le compte sera bloqué 30 jours après expiration du mot de passe : 
+ ```bash                
+   chage -I 30 dave
+ ``` 

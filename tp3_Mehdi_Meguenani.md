@@ -204,3 +204,20 @@ Après cela Charlie a toujours accès au différent groupe primaire et prioritai
  ```bash                
    chage -I 30 dave
  ``` 
+![ScreenShot](./assetp3/Q16.PNG)
+
+17. Quel est l’interpréteur de commandes (Shell) de l’utilisateur root ?
+
+L'interpréteur qui est utilisé par l'utilisateur  root est bash
+
+18. Si vous regardez la liste des comptes présents sur la machine, vous verrez qu’il en existe un nommé
+nobody. A quoi correspond-il ?
+
+Le compte nobdy est un compte qui n'a aucun fichier a lui qui n'est dans aucun groupe qui a des privilèges et dont les seules possibilités sont celles que tous les autres utilisateurs ont.
+
+19. Par défaut, combien de temps la commande sudo conserve-t-elle votre mot de passe en mémoire ?
+Quelle commande permet de forcer sudo à oublier votre mot de passe ?
+
+La coommande sudo conserve en memoire notre mot de passe pendant 15 minutes
+
+La commande ``` sudo -k ``` permet de forcer sudo a oublié le mot de passe 
